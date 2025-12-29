@@ -20,10 +20,48 @@ Overview of the files and data present in the root directory.
 │   └── bank_data.csv
 ├── images
 │   ├── eda
-│   │   ├── Churn.png
-│   │   ├── Customer_Age.png
-│   │   ├── Gender.png
-│   │   ├── heatmap.png
+│   │   ├── bivariate
+│   │   │   ├── Avg_Open_To_Buy.png
+│   │   │   ├── Avg_Utilization_Ratio.png
+│   │   │   ├── Card_Category.png
+│   │   │   ├── Contacts_Count_12_mon.png
+│   │   │   ├── Credit_Limit.png
+│   │   │   ├── Customer_Age.png
+│   │   │   ├── Dependent_count.png
+│   │   │   ├── Education_Level.png
+│   │   │   ├── Gender.png
+│   │   │   ├── Income_Category.png
+│   │   │   ├── Marital_Status.png
+│   │   │   ├── Months_Inactive_12_mon.png
+│   │   │   ├── Months_on_book.png
+│   │   │   ├── Total_Amt_Chng_Q4_Q1.png
+│   │   │   ├── Total_Ct_Chng_Q4_Q1.png
+│   │   │   ├── Total_Relationship_Count.png
+│   │   │   ├── Total_Revolving_Bal.png
+│   │   │   ├── Total_Trans_Amt.png
+│   │   │   ├── Total_Trans_Ct.png
+│   │   ├── multivariate
+│   │   │   ├── correlation.png
+│   │   ├── univariate
+│   │   │   ├── Avg_Open_To_Buy.png
+│   │   │   ├── Avg_Utilization_Ratio.png
+│   │   │   ├── Card_Category.png
+│   │   │   ├── Contacts_Count_12_mon.png
+│   │   │   ├── Credit_Limit.png
+│   │   │   ├── Customer_Age.png
+│   │   │   ├── Dependent_count.png
+│   │   │   ├── Education_Level.png
+│   │   │   ├── Gender.png
+│   │   │   ├── Income_Category.png
+│   │   │   ├── Marital_Status.png
+│   │   │   ├── Months_Inactive_12_mon.png
+│   │   │   ├── Months_on_book.png
+│   │   │   ├── Total_Amt_Chng_Q4_Q1.png
+│   │   │   ├── Total_Ct_Chng_Q4_Q1.png
+│   │   │   ├── Total_Relationship_Count.png
+│   │   │   ├── Total_Revolving_Bal.png
+│   │   │   ├── Total_Trans_Amt.png
+│   │   │   ├── Total_Trans_Ct.png
 │   │   ├── Marital_Status.png
 │   │   └── Total_Trans_Amt.png
 │   └── results
@@ -48,20 +86,22 @@ clone https://github.com/SaryRodriguez/devops_engineer_machine_learning.git
 Here is a list of the libraries used in this project:
 
 ```
-autopep8==1.5.7
-joblib==0.11
-matplotlib==2.1.0
-numpy==1.12.1
-pandas==0.23.3
-pylint==2.9.6
-scikit-learn==0.22
-seaborn==0.8.1
+scikit-learn>=1.3.2
+shap>=0.44.0
+joblib>=1.3.2
+pandas>=2.0.3
+numpy>=1.24.3
+matplotlib>=3.7.3
+seaborn>=0.13.0
+pylint>=3.0.3
+autopep8>=2.0.4
 ```
+NOTE: my python version is: Python 3.14.2
 
 To be able to run this project, you must install Python library using the following command:
 
 ```
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### Modeling
@@ -74,9 +114,7 @@ python churn_library.py
 
 ### Testing and Logging
 
-In other conditions, suppose you want to change the configuration of the modeling workflow, such as: changing the path of the data location, adding other models, adding feature engineering stages. You can change it in churn_library.py files. To test if your changes are going well, you need to do testing and logging.
-
-To do testing and logging, you need to change a number of configurations in the churn_script_logging_and_tests.py file, such as: target column name, categorical column name list, data location, etc. After that, run the following command in the terminal to perform testing and loggingAfter that, run the following command in the terminal to perform testing and logging:
+Run the following command in the terminal to perform testing and logging:
 
 ```
 python churn_script_logging_and_tests.py
